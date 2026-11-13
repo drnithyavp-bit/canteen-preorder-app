@@ -1,37 +1,94 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Canteen Pre-order</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
-        <h1>College Canteen</h1>
-        <p>Order your food before you reach the canteen!</p>
+        <h1>🍽️ College Canteen</h1>
+        <p>Order Online – Skip the Queue!</p>
     </header>
 
-    <main>
-        <h2>Available Food Items</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Food Menu</a>
+        <a href="#cart">My Cart</a>
+    </nav>
 
-        <div class="food-item">
-            <h3>Veg Sandwich</h3>
-            <p>Price: ₹40</p>
-            <button onclick="orderFood('Veg Sandwich')">
-                Order Now
-            </button>
+    <section id="home">
+        <h2>Welcome to Our College Canteen</h2>
+        <p>Order your favourite food in advance.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Our Food Menu</h2>
+
+        <div class="food-container">
+
+            <div class="food-item">
+                <h3>Veg Sandwich</h3>
+                <p>Price: ₹40</p>
+                <button onclick="addToCart('Veg Sandwich', 40)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="food-item">
+                <h3>Masala Dosa</h3>
+                <p>Price: ₹50</p>
+                <button onclick="addToCart('Masala Dosa', 50)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="food-item">
+                <h3>Veg Fried Rice</h3>
+                <p>Price: ₹70</p>
+                <button onclick="addToCart('Veg Fried Rice', 70)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="food-item">
+                <h3>Tea</h3>
+                <p>Price: ₹12</p>
+                <button onclick="addToCart('Tea', 12)">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cart">
+        <h2>My Shopping Cart</h2>
+
+        <div id="cart-items">
+            Your cart is empty.
         </div>
 
-        <div class="food-item">
-            <h3>Masala Dosa</h3>
-            <p>Price: ₹50</p>
-            <button onclick="orderFood('Masala Dosa')">
-                Order Now
-            </button>
-        </div>
-    </main>
+        <h3 id="total">Total: ₹0</h3>
+
+        <label for="pickup">Select Pickup Time:</label>
+        <input type="time" id="pickup">
+
+        <br><br>
+
+        <button onclick="placeOrder()">Place Order</button>
+    </section>
+
+    <footer>
+        <p>College Canteen Pre-order Application</p>
+        <p>Developed by Student Project Team</p>
+    </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
